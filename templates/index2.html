@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+    <title>Django Templates Tutorial</title>
+</head>
+<body>
+        <div class="table-style">
+            <table >
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Salary</th>
+                </tr>
+                {% for person in personList %}
+                    <tr>
+                        <td>
+                            {{person.first_name}}
+                        </td>
+                        <td>
+                            {{person.last_name}}
+                        </td>
+                        <td>
+<!--                            {{person.salary}}-->
+                            <a href="{% url 'index3' %}">Index3</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+
+</body>
+</html>
